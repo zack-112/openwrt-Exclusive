@@ -14,10 +14,10 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
-  schedule:
-    - cron: 0 18 */3 * *
+        required: true
+        default: 'true'
+#  schedule:
+   # - cron: 0 18 */3 * *
 
 env:
   REPO_URL: https://github.com/project-openwrt/openwrt
