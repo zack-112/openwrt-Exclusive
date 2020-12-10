@@ -190,7 +190,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
-    - name: 微信报告
+   
+   - name: 微信报告
       uses: emon100/serverchan-action@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
