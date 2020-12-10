@@ -170,3 +170,39 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
+- name: 发布至release
+      uses: softprops/action-gh-release@v1
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        name: ${{ env.FILE_TIME }} 「 openwrt5.4-X86-64 」
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
+
+    - name: 删除旧的Releases
+      uses: dev-drprasad/delete-older-releases@v0.1.0
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        keep_latest: 9
+        delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+    - name: 微信报告
+      uses: emon100/serverchan-action@master
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        SCKEY: ${{ secrets.SERVERCHAN }}
+        text: 恭喜主人openwrt5.4固件编译成功！
+        desp: 我亲爱的主人您要编译的固件成功完成了！
+              
+              
+              奶牛快传：${{ steps.cowtransfer.outputs.url }}
+              
+              
+              WeTransfer：${{ steps.wetransfer.outputs.url }}
+              
+              
+              Have a nice day.
