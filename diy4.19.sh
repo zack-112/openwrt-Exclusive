@@ -29,10 +29,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
-
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package/tcping
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/trojan-go
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/trojan-plus
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/naiveproxy package/naiveproxy
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray package/v2ray
-# svn co https://github.com/xiaorouji/openwrt-package/trunk/package/v2ray-plugin package/v2ray-plugin
+git clone https://github.com/ledewrt/luci-app-ledeproxy.git package/luci-app-ledeproxy
+git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-dnsfilter
+git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/luci-app-UUGameAcc
